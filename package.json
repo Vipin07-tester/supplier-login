@@ -1,0 +1,23 @@
+{
+  "name": "supplier-automation",
+  "version": "1.0.0",
+  "description": "Supplier Portal Automation",
+  "main": "run.ts",
+  "scripts": {
+    "start": "ts-node run.ts"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0",
+    "nodemailer": "^6.9.0",
+    "imap": "^0.8.19",
+    "mailparser": "^3.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0",
+    "@types/nodemailer": "^6.4.0",
+    "@types/imap": "^0.8.0",
+    "@types/mailparser": "^3.4.0"
+  }
+}

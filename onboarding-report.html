@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Supplier Onboarding Test Report</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; }
+    .header { background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 30px 40px; border-bottom: 2px solid #e94560; }
+    .header h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .header p { font-size: 13px; color: #a0aec0; }
+    .summary { display: flex; gap: 20px; padding: 24px 40px; background: #16213e; border-bottom: 1px solid #2d3748; flex-wrap: wrap; }
+    .summary-card { background: #0f3460; border-radius: 10px; padding: 16px 24px; flex: 1; min-width: 140px; text-align: center; border: 1px solid #2d3748; }
+    .summary-card .label { font-size: 12px; color: #a0aec0; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .summary-card .value { font-size: 28px; font-weight: 700; }
+    .value.overall-pass { color: #68d391; }
+    .value.overall-fail { color: #fc8181; }
+    .value.pass { color: #68d391; }
+    .value.fail { color: #fc8181; }
+    .value.neutral { color: #63b3ed; }
+    .content { padding: 30px 40px; }
+    .section-title { font-size: 16px; font-weight: 600; color: #e2e8f0; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #2d3748; }
+    .test-block { background: #16213e; border-radius: 10px; border: 1px solid #2d3748; overflow: hidden; margin-bottom: 20px; }
+    .test-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: #0f3460; }
+    .test-header .test-name { font-size: 15px; font-weight: 600; color: #e2e8f0; }
+    .badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .badge.PASS { background: #1a472a; color: #68d391; border: 1px solid #68d391; }
+    .badge.FAIL { background: #742a2a; color: #fc8181; border: 1px solid #fc8181; }
+    .steps-table { width: 100%; border-collapse: collapse; }
+    .steps-table th { background: #1a202c; color: #a0aec0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 10px 20px; text-align: left; }
+    .steps-table td { padding: 12px 20px; border-top: 1px solid #2d3748; font-size: 13px; vertical-align: top; }
+    .steps-table tr:hover td { background: #1e2a3a; }
+    .step-status { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; }
+    .step-status.PASS { color: #68d391; }
+    .step-status.FAIL { color: #fc8181; }
+    .step-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .step-dot.PASS { background: #68d391; }
+    .step-dot.FAIL { background: #fc8181; }
+    .detail-text { color: #718096; font-size: 12px; word-break: break-all; }
+    .skipped { color: #a0aec0; font-style: italic; font-size: 12px; }
+    .duration { color: #63b3ed; font-size: 12px; }
+    .crash-banner { background: #742a2a; color: #fc8181; padding: 12px 20px; font-weight: 600; font-size: 14px; border-left: 4px solid #fc8181; margin: 20px 40px; border-radius: 6px; }
+    .footer { text-align: center; padding: 20px; color: #4a5568; font-size: 12px; border-top: 1px solid #2d3748; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏭 Supplier Onboarding Test Report</h1>
+    <p>Generated: 15/4/2026, 6:56:32 pm &nbsp;|&nbsp; Total Duration: 138.38s</p>
+  </div>
+
+  <div class="summary">
+    <div class="summary-card">
+      <div class="label">Overall</div>
+      <div class="value overall-fail">❌ FAIL</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Total Steps</div>
+      <div class="value neutral">45</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Passed</div>
+      <div class="value pass">38</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Failed</div>
+      <div class="value fail">7</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Pass Rate</div>
+      <div class="value neutral">84%</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Duration</div>
+      <div class="value neutral">138.38s</div>
+    </div>
+  </div>
+
+  
+  <div class="crash-banner">
+    ❌ 7 test step(s) failed — check the table below for details
+  </div>
+
+  <div class="content">
+    <div class="section-title">Test Steps</div>
+    <div class="test-block">
+      <div class="test-header">
+        <span class="test-name">Supplier Onboarding Test Report</span>
+        <span class="badge FAIL">FAIL</span>
+      </div>
+      <table class="steps-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Step</th>
+            <th>Status</th>
+            <th>Duration</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td style="color:#4a5568">1</td>
+            <td style="color:#e2e8f0;font-weight:500">Login</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">5092ms</span></td>
+            <td><span class="detail-text">URL: https://stage.supplier.pactap.com/my-account</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">2</td>
+            <td style="color:#e2e8f0;font-weight:500">Upload Company Logo</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1037ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">3</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Years of Establishment</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1598ms</span></td>
+            <td><span class="detail-text">2015</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">4</td>
+            <td style="color:#e2e8f0;font-weight:500">Select State</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">605ms</span></td>
+            <td><span class="detail-text">Maharashtra</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">5</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill City</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">10ms</span></td>
+            <td><span class="detail-text">Mumbai</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">6</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Pin Code</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">16ms</span></td>
+            <td><span class="detail-text">400001</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">7</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Corporation Identity Number</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">15ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">8</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Annual Turnover Local</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1495ms</span></td>
+            <td><span class="detail-text">05CR to 10Cr</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">9</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Annual Turnover USD</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">625ms</span></td>
+            <td><span class="detail-text">5 Million to 10 Million</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">10</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Tax ID</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">22ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">11</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Basic Details</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">2068ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">12</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Do You Export</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1053ms</span></td>
+            <td><span class="detail-text">Yes</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">13</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill IEC Certificate Code</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">33ms</span></td>
+            <td><span class="detail-text">123456789014</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">14</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Export Countries</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">30019ms</span></td>
+            <td><span class="detail-text">TimeoutError: page.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[data-bs-toggle="dropdown"][title="Select country"]')[22m
+</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">15</td>
+            <td style="color:#e2e8f0;font-weight:500">Select FOB Port</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">623ms</span></td>
+            <td><span class="detail-text">Port of Mundra - india</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">16</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Export Details</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">2064ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">17</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Category - Bagasse</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">2106ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">18</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Category Page</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">3155ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">19</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Sub Category - Bagasse Trays</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">2095ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">20</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Sub Category Page</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">3095ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">21</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Product - Bagasse Meal Tray</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">2075ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">22</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Products Page</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">3130ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">23</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Monthly Production Capacity</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1608ms</span></td>
+            <td><span class="detail-text">56000</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">24</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Minimum Order Quantity</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">575ms</span></td>
+            <td><span class="detail-text">45000</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">25</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Product Details</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">3626ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">26</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Import Duty</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">3132ms</span></td>
+            <td><span class="detail-text">10</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">27</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Duties Tab</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">6602ms</span></td>
+            <td><span style="color:#4a5568">—</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">28</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Location Type</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1035ms</span></td>
+            <td><span class="detail-text">factory</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">29</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Factory Area</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">31ms</span></td>
+            <td><span class="detail-text">50004</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">30</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Manpower</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">21ms</span></td>
+            <td><span class="detail-text">1 - 200</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">31</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Stuffing Permit</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1082ms</span></td>
+            <td><span class="detail-text">Yes</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">32</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Palletization</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">1097ms</span></td>
+            <td><span class="detail-text">Yes</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">33</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Pallet Size</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">16ms</span></td>
+            <td><span class="detail-text">40*48*45</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">34</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Per Pallet Cost</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">19ms</span></td>
+            <td><span class="detail-text">1500</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">35</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Address Line 1</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">26ms</span></td>
+            <td><span class="detail-text">ABCD-987454</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">36</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Address Line 2</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">0ms</span></td>
+            <td><span class="skipped">Skipped - Optional field</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">37</td>
+            <td style="color:#e2e8f0;font-weight:500">Select Location State</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">12ms</span></td>
+            <td><span class="detail-text">Delhi</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">38</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Location City</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">13ms</span></td>
+            <td><span class="detail-text">Delhi</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">39</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Location Pin Code</td>
+            <td><span class="step-status PASS"><span class="step-dot PASS"></span>PASS</span></td>
+            <td><span class="duration">11ms</span></td>
+            <td><span class="detail-text">110065</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">40</td>
+            <td style="color:#e2e8f0;font-weight:500">Upload Images</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">1567ms</span></td>
+            <td><span class="detail-text">Error: ENOENT: no such file or directory, stat 'C:\supplier_Onboarding\[object Object]'</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">41</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Machine Details</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">55621ms</span></td>
+            <td><span class="detail-text">TimeoutError: page.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button.btn.btn-success:has-text("Upload")')[22m
+[2m    - locator resolved to 2 elements. Proceeding with the first one: <button type="button" _ngcontent-ng-c2691557902="" class="btn btn-success px-5"> Upload↵</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    56 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not visible[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">42</td>
+            <td style="color:#e2e8f0;font-weight:500">Fill Certificate Details</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">162ms</span></td>
+            <td><span class="detail-text">Error: page.waitForTimeout: Target page, context or browser has been closed</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">43</td>
+            <td style="color:#e2e8f0;font-weight:500">Click Next - Location Page</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">2ms</span></td>
+            <td><span class="detail-text">Error: page.click: Target page, context or browser has been closed</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">44</td>
+            <td style="color:#e2e8f0;font-weight:500">Summary Page Loaded</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">5ms</span></td>
+            <td><span class="detail-text">Error: page.waitForSelector: Target page, context or browser has been closed</span></td>
+          </tr>
+          <tr>
+            <td style="color:#4a5568">45</td>
+            <td style="color:#e2e8f0;font-weight:500">Unexpected Script Error</td>
+            <td><span class="step-status FAIL"><span class="step-dot FAIL"></span>FAIL</span></td>
+            <td><span class="duration">0ms</span></td>
+            <td><span class="detail-text">Error: page.screenshot: Target page, context or browser has been closed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer">Supplier Automation Report &nbsp;|&nbsp; 15/4/2026, 6:56:32 pm</div>
+</body>
+</html>
